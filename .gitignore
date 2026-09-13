@@ -1,0 +1,33 @@
+# Go
+bin/
+tmp/
+build/
+dist/
+*.exe
+*.exe~
+*.test
+*.out
+*.prof
+coverage.*
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+key/
+key/**
+
+# Go tooling and local caches
+.cache/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
