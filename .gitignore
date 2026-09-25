@@ -16,6 +16,8 @@ coverage.*
 !.env.example
 key/
 key/**
+student-api
+student-api/**
 
 # Go tooling and local caches
 .cache/
