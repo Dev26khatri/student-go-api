@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,3 +20,14 @@ jobs:
 
       - name: Run tests
         run: go test ./...
+
+      - name: Test SSH connection to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{secrets.EC2_USER }}
+          key: ${{secrets.EC2_SSH_PRIVATE_KEY }}
+          script: |
+            echo "Connected to EC2 successfully!"
+            hostname
+            whoami
